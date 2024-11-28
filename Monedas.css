@@ -1,0 +1,177 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff6cc; /* Amarillo crema suave */
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Rayos que van del centro hacia afuera */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 25%, rgba(255, 204, 0, 0.5) 50%, rgba(255, 204, 0, 0.3) 75%, rgba(255, 255, 255, 0) 100%);
+    z-index: -1;
+}
+
+/* Encabezado */
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    width: 225px;
+    height: auto;
+}
+
+.login-button {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #005bb5;
+}
+
+/* Cuerpo principal */
+.gems-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gem-item {
+    background: linear-gradient(135deg, #ADD8E6, #A7C7E7); /* Azul claro con un suave degradado */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para resaltar la caja */
+    text-align: center;
+}
+
+.gem-image {
+    width: 250px; /* Ajusta este valor para el tamaño deseado */
+    height: auto; /* Esto mantiene la proporción */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación de transición */
+}
+
+.gem-item {
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Hace la transición más lenta y suave */
+}
+
+.gem-item:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más grande al hacer hover */
+}
+
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Ocupa toda la parte inferior de la página */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .footer-links {
+    margin: 10px 0;
+  }
+  
+  .footer-links a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .app-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-top: 20px;
+  }
+  
+  .app-links a {
+    display: inline-block;
+  }
+  
+  .app-logo {
+    transition: transform 0.2s; /* Efecto de hover */
+  }
+  
+  .app-store-logo {
+    width: 170px; /* Tamaño específico para App Store */
+    height: auto;
+  }
+  
+  .play-store-logo {
+    width: 152px; /* Tamaño específico para Google Play */
+    height: auto;
+  }
+  
+  .app-logo:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño en hover */
+  }
+  
+  
+  .company-info {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .footer-logo {
+    width: 80px;
+    height: auto;
+    margin-top: 10px;
+  }

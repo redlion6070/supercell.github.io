@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supercell Store</title>
+  <link rel="stylesheet" href="perfil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <div class="header-container">
+      <img src="Image/Logo_Header.jpg" alt="Supercell Store Logo" class="logo">
+      <button class="profile-button" onclick="window.location.href='Mi_Perfil.html'">
+        <i class="fas fa-user"></i> <!-- Icono de usuario -->
+      </button>
+    </div>
+  </header>
+
+  <!-- Cuerpo principal -->
+  <main>
+    <div class="main-container">
+      <!-- Caja de perfil -->
+      <div class="box">
+        <h2>Mi Perfil</h2>
+        <div class="profile-info">
+          <img src="Image/perfil.png" alt="Foto de perfil" class="profile-pic">
+          <button class="close-session-btn" onclick="closeSession()">Cerrar sesión</button>
+          <div class="profile-details">
+            <p><strong>Email:</strong> juan@example.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrito de compras -->
+      <div class="box">
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"> <!-- Aquí le agregamos el id -->
+  
+        </ul>
+        <button class="checkout-btn" onclick="proceedToCheckout()">Proceder al pago</button>
+      </div>
+
+      <!-- Historial de compras -->
+      <div class="box">
+        <h2>Historial de Compras</h2>
+        <ul id="history-items">
+
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer fijo -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-icons">
+        <a href="https://www.youtube.com/supercell"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/supercell/"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/supercell/"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/supercell"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/supercell/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.glassdoor.com/Overview/Working-at-Supercell-EI_IE511675.11,20.htm"><i class="fas fa-link"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="https://supercell.com/en/terms-of-service/es/">Condiciones del servicio</a> |
+        <a href="https://supercell.com/en/privacy-policy/es/">Política de privacidad</a> |
+        <a href="https://supercell.com/en/parents/es/">Guía para padres</a> |
+        <a href="https://supercell.com/en/safe-and-fair-play/es/">Política de juego limpio y seguro</a> |
+        <a href="#" id="open-cookie-modal">Administrar cookies</a>
+      </div>
+      <div class="app-links">
+        <a href="https://apps.apple.com/es/developer/supercell/id488106216" target="_blank" class="app-store">
+            <img src="Image/App_Store.png" alt="App Store" class="app-logo app-store-logo">
+        </a>
+        <a href="https://play.google.com/store/apps/dev?id=6715068722362591614&hl=es" target="_blank" class="play-store">
+            <img src="Image/Play_Store.png" alt="Google Play" class="app-logo play-store-logo">
+        </a>
+      </div>    
+      <div class="company-info">
+        <p>Supercell Oy | Jätkäsaarenlaituri 1 | 00180, Helsinki | Finlandia | Identificador de empresa: 2336509-6</p>
+      </div>
+      <img src="Image/Logo_Blanco.png" alt="Supercell Logo" class="footer-logo">
+    </div>
+  </footer>
+
+  <!-- Modal de cookies -->
+  <div id="cookie-modal" class="cookie-modal">
+    <div class="cookie-modal-content">
+      <span class="close-btn" id="close-cookie-modal">&times;</span>
+      <h2>CENTRO DE PREFERENCIA DE LA PRIVACIDAD</h2>
+      <div class="cookie-option">
+        <h3>Cookies dirigidas</h3>
+        <p>Estas cookies pueden estar en todo el sitio web, colocadas por nuestros socios publicitarios...</p>
+      </div>
+      <div class="cookie-option">
+        <h3>Cookies de análisis</h3>
+        <p>Estas cookies nos ayudan a entender cómo interactúan los visitantes con la página web...</p>
+      </div>
+      <div class="cookie-option">
+        <h3>Cookies necesarias</h3>
+        <p>Estas cookies son necesarias para que la página web funcione...</p>
+      </div>
+      <button class="confirm-btn">Confirmar mis preferencias</button>
+    </div>
+  </div>
+
+  <script src="perfil.js"></script>
+</body>
+</html>

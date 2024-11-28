@@ -1,0 +1,350 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4; /* Fondo gris claro */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: repeating-linear-gradient(
+      135deg,
+      #e0e0e0,
+      #e0e0e0 20px,
+      #f4f4f4 20px,
+      #f4f4f4 40px
+    ); /* Patrón de líneas de puntadas */
+  }
+  
+  /* Encabezado */
+  header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .logo {
+    width: 225px;
+    height: auto;
+  }
+  
+  /* Botón de perfil circular */
+  .profile-button {
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;  /* Círculo */
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border: none;
+  }
+  
+  .profile-button i {
+    font-size: 18px; /* Tamaño del icono */
+  }
+  
+  .profile-button:hover {
+    background-color: #474747; /* Cambia el color del fondo a negro cuando se pasa el mouse */
+    color: #ffffff; /* Cambia el color del icono a blanco */
+  }
+  
+  /* Cuerpo principal */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 20px 0;
+  }
+  
+  /* Caja para la imagen horizontal */
+  .clickable-box {
+    display: block;
+    background: linear-gradient(to left, #fff9c4, #fbc02d); /* Degradado de amarillo */
+    border-radius: 8px;
+    width: 60%;
+    margin: 20px 0;
+    text-decoration: none;
+  }
+  
+  .image-box {
+    width: 85%; /* Ajusta el tamaño según lo que necesites */
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Imagen dentro de la nueva caja */
+  .image-box img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible de la caja */
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Estilo de hover */
+  .clickable-box {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .clickable-box:hover {
+    transform: scale(1.02); /* Aumenta un poco el tamaño al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  }
+  
+  /* Animación para la caja de juego */
+  .game-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 80%; /* Ocupa más espacio */
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Hereda el color del texto del padre */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* Estilo para enlaces dentro de .game-block */
+  .game-block a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Hereda el color del texto del padre */
+  }
+  
+  /* Para evitar que cambie de color cuando se visita */
+  .game-block a:visited {
+    color: inherit; /* Mantiene el color original del texto */
+  }
+  
+  /* Para evitar que aparezca subrayado en el foco (cuando se selecciona) */
+  .game-block a:focus {
+    text-decoration: none; /* Elimina el subrayado cuando está en foco */
+    outline: none; /* Elimina el contorno por defecto del foco (opcional) */
+  }
+  
+  .game-block:hover {
+    transform: scale(1.03); /* Escala más ligera del 3% */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra un poco más profunda */
+  }
+  
+  /* Imagen dentro de la caja de juego */
+  .game-block img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.2s ease; /* Sin zoom adicional en la imagen */
+  }
+  
+  .game-block h2 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333; /* Color del nombre del juego */
+    transition: color 0.2s ease;
+  }
+  
+  /* Cambia el color del texto al hacer hover */
+  .game-block:hover h2 {
+    color: #005bb5; /* Cambia el color del texto al hacer hover */
+  }
+  
+  /* Estilos para el modal de cookies */
+  .cookie-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  }
+  
+  .cookie-modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .cookie-modal-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .cookie-option {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .cookie-option h3 {
+    font-size: 1.2em;
+    color: #007bff;
+    margin-bottom: 5px;
+  }
+  
+  .cookie-option p {
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  .cookie-option a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .cookie-option a:hover {
+    text-decoration: underline;
+  }
+  
+  .confirm-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #333;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Ocupa toda la parte inferior de la página */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .footer-links {
+    margin: 10px 0;
+  }
+  
+  .footer-links a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .app-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .app-links a {
+    display: inline-block;
+  }
+  
+  .app-store-logo {
+    width: 170px; /* Tamaño específico para App Store */
+    height: auto;
+  }
+  
+  .play-store-logo {
+    width: 152px; /* Tamaño específico para Google Play */
+    height: auto;
+  }
+  
+  .app-logo {
+    transition: transform 0.2s; /* Efecto de hover */
+  }
+  
+  .app-logo:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño en hover */
+  }
+  
+  .company-info {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .footer-logo {
+    width: 80px;
+    height: auto;
+    margin-top: 10px;
+  }
+  

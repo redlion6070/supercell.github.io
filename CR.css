@@ -1,0 +1,222 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('Image/Fondo_CR.png'); /* La imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra el fondo */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No permite que la imagen se repita */
+    position: relative;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.0); /* Fondo negro con 30% de opacidad */
+    z-index: -1; /* Coloca la capa detrás del contenido */
+}
+
+/* Encabezado */
+header {
+    background-color: #003a74; /* Cambia este color al que desees */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    min-height: 100px; /* Altura mínima para el header */
+    position: relative;
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    width: 225px;
+    height: auto;
+}
+
+  /* Botón de perfil circular */
+  .profile-button {
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;  /* Círculo */
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border: none;
+  }
+  
+  .profile-button i {
+    font-size: 18px; /* Tamaño del icono */
+  }
+  
+  .profile-button:hover {
+    background-color: #474747; /* Cambia el color del fondo a negro cuando se pasa el mouse */
+    color: #ffffff; /* Cambia el color del icono a blanco */
+  }
+
+/* Cuerpo principal */
+.gems-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gem-item {
+    text-align: center;
+    color: inherit;
+    background: none;
+}
+
+.gem-image {
+    width: 350px; /* Ajusta este valor para el tamaño deseado */
+    height: auto; /* Esto mantiene la proporción */
+    cursor: pointer;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra detrás de la imagen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación de transición */
+}
+
+.gem-image:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más grande al hacer hover */
+}
+
+.price {
+    margin-top: 10px; /* Separación entre la imagen y la moneda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coin-wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.coin-icon {
+    width: 75px; /* Ajusta el tamaño de la moneda */
+    height: auto;
+    margin-right: 5px;
+}
+
+.price span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Ocupa toda la parte inferior de la página */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .footer-links {
+    margin: 10px 0;
+  }
+  
+  .footer-links a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .app-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-top: 20px;
+  }
+  
+  .app-links a {
+    display: inline-block;
+  }
+  
+  .app-logo {
+    transition: transform 0.2s; /* Efecto de hover */
+  }
+  
+  .app-store-logo {
+    width: 170px; /* Tamaño específico para App Store */
+    height: auto;
+  }
+  
+  .play-store-logo {
+    width: 152px; /* Tamaño específico para Google Play */
+    height: auto;
+  }
+  
+  .app-logo:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño en hover */
+  }
+  
+  
+  .company-info {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .footer-logo {
+    width: 80px;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+

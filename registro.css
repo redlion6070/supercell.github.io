@@ -1,0 +1,268 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #003366, #1a75ff);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    width: 200px; /* Ajustado el valor de 150px a 200px */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Animación para mover la bola blanca en la barra de progreso solo en el eje X */
+@keyframes moveBall {
+    0% {
+        left: 4px; /* Posición inicial */
+    }
+    100% {
+        left: 284px; /* Posición final (al final de la barra) */
+    }
+}
+
+/* Estilos para la barra de progreso */
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px; /* Tamaño vertical de la barra */
+    margin: 10px 0 20px 0;
+    position: relative; /* Necesario para el posicionamiento de la bola */
+}
+
+/* Bola de la barra cuando el correo es aprobado */
+.progress-bar::before {
+    content: ''; /* Necesario para crear el pseudo-elemento */
+    position: absolute;
+    top: 50%; /* Centra la bola verticalmente */
+    left: 4px; /* Posición inicial de la bola (siempre a la izquierda al principio) */
+    width: 12px; /* Tamaño de la bola */
+    height: 12px; /* Tamaño de la bola */
+    background-color: white; /* Color de la bola */
+    border-radius: 50%; /* Hace la bola redonda */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+    transform: translateY(-50%); /* Ajusta para centrar la bola verticalmente */
+    /* No hay animación aquí, solo se activa cuando se agrega la clase 'approved' */
+}
+
+/* Bola de la barra cuando el correo es aprobado */
+.progress-bar.approved::before {
+    animation: moveBall 0.75s linear forwards; /* La animación solo ocurre una vez */
+}
+
+/* Estilos para la barra de progreso */
+.progress {
+    display: block;
+    width: 100%; /* El porcentaje de la barra */
+    height: 100%;
+    background: linear-gradient(to right, #00cc99, #1e90ff); /* Degradado de verde a azul */
+    border-radius: 20px; /* Bordes redondeados */
+}
+
+
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.info-text {
+    font-size: 0.8em;
+    color: #999;
+    margin: 10px 0;
+}
+
+.info-text a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+/* Animación para cambiar el texto */
+@keyframes changeText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilo para los textos modificados */
+#main-text {
+    font-size: 1.2em; /* No se cambia el tamaño */
+    font-weight: bold; /* Cambiado a 'bold' */
+    transition: all 0.5s ease;
+}
+
+
+#sub-text {
+    font-size: 1em; /* No se cambia el tamaño */
+    transition: all 0.5s ease;
+}
+
+#main-text.changed {
+    font-weight: bold;
+    animation: changeText 0.5s forwards;
+}
+
+#sub-text.changed {
+    font-size: 1em; /* No cambia el tamaño */
+    color: #333;
+    animation: changeText 0.5s forwards;
+}
+
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #b3d1ff;
+    border: none;
+    border-radius: 5px;
+    color: #333;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.footer-text {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+}
+
+.footer-text a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Por defecto, el modal está oculto */
+    position: fixed;
+    z-index: 1; /* Se asegura de que el modal quede por encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 550px;
+}
+
+.modal-image {
+    width: 500px; /* Tamaño controlado de la imagen */
+    height: auto; /* Mantiene la proporción original */
+    margin: 0 auto 20px auto; /* Centra la imagen y le da un margen en la parte inferior */
+    display: block; /* Hace que el elemento sea un bloque para que el centrado funcione */
+    border-radius: 15px; /* Bordes redondeados */
+}
+
+
+/* Estilos para la pregunta en el modal */
+.modal-question {
+    font-size: 1.5em; /* Fuente más grande */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 15px; /* Espacio debajo de la pregunta */
+    color: #333; /* Color oscuro para la pregunta */
+    text-align: center; /* Centrar el texto */
+    width: 100%; /* Asegura que el contenedor de la pregunta ocupe el 100% del ancho */
+}
+
+
+/* Estilos para la lista de instrucciones */
+.modal-instructions {
+    font-size: 1em; /* Tamaño de fuente normal */
+    color: #666; /* Color de texto más suave */
+    line-height: 1.6; /* Espaciado entre líneas */
+    padding-left: 20px; /* Espaciado a la izquierda para las viñetas */
+}
+
+/* Estilos para los elementos de la lista */
+.modal-instructions li {
+    margin-bottom: 10px; /* Espacio entre los ítems de la lista */
+    list-style-type: disc; /* Viñetas (puedes cambiarlo si prefieres otro estilo) */
+}
+
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+

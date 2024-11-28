@@ -1,0 +1,395 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4; /* Fondo gris claro */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+  
+  /* Encabezado */
+  header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .logo {
+    width: 225px;
+    height: auto;
+  }
+  
+  /* Botón de perfil circular */
+  .profile-button {
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;  /* Círculo */
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border: none;
+  }
+  
+  .profile-button i {
+    font-size: 18px; /* Tamaño del icono */
+  }
+  
+  .profile-button:hover {
+    background-color: #474747; /* Cambia el color del fondo a negro cuando se pasa el mouse */
+    color: #ffffff; /* Cambia el color del icono a blanco */
+  }
+
+/* Cuerpo principal */
+/* Caja de perfil */
+.box {
+    background-color: #ffffff;
+    margin: 15px 0;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover para aumentar el tamaño de la caja */
+.box:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para la imagen circular y centrado */
+.profile-info {
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center;     /* Alinea la imagen verticalmente */
+    flex-direction: column;  /* Asegura que todo dentro de .profile-info esté centrado */
+}
+
+.profile-pic {
+    width: 100px;            /* Establece un tamaño fijo para la imagen */
+    height: 100px;           /* Mantiene la proporción cuadrada */
+    border-radius: 50%;      /* Hace que la imagen sea circular */
+    object-fit: cover;       /* Asegura que la imagen se recorte adecuadamente */
+    margin-bottom: 20px;     /* Espacio debajo de la imagen */
+}
+
+/* Caja expandible */
+.box.expandable {
+    cursor: pointer;
+}
+
+.box.expandable.active {
+    height: auto;
+    padding-bottom: 20px;
+}
+
+/* Estilos para el botón de Cerrar opción en la primera caja */
+.close-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #333;
+}
+
+/* Estilo del botón de Cerrar sesión */
+.close-session-btn {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute; /* Posiciona el botón en la esquina */
+    top: 10px; /* Espaciado desde la parte superior */
+    right: 10px; /* Espaciado desde la parte derecha */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.close-session-btn:hover {
+    background-color: #444;
+}
+
+/* Asegúrate de que la caja tenga posición relativa para permitir posicionar el botón dentro de ella */
+.box {
+    background-color: #ffffff;
+    margin: 15px 0;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    position: relative; /* Esto es necesario para posicionar el botón dentro de la caja */
+}
+
+
+/* Carrito de Compras */
+.box ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.box ul li {
+    margin: 8px 0;
+    color: #333;
+}
+
+/* Estilo del botón de "Checkout" (ahora de color negro y centrado) */
+.checkout-btn {
+    background-color: #000; /* Color de fondo negro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Añadido espacio superior */
+    display: block; /* Hace que el botón sea un bloque, permitiendo el centrado */
+    margin-left: auto; /* Centrado automático */
+    margin-right: auto; /* Centrado automático */
+    width: 200px; /* Opcional: controla el ancho del botón */
+}
+
+.checkout-btn:hover {
+    background-color: #444; /* Color oscuro cuando el ratón está sobre el botón */
+}
+
+
+/* Historial de Compras */
+.box h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Estilos para la caja expandida */
+.box p {
+    display: none;
+    color: #666;
+}
+
+.box.expandable.active p {
+    display: block;
+}
+
+/* Fondo de los bloques */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Separación entre los bloques */
+.box + .box {
+    margin-top: 20px;
+}
+
+  
+  /* Estilos para el modal de cookies */
+  .cookie-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  }
+  
+  .cookie-modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .cookie-modal-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .cookie-option {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .cookie-option h3 {
+    font-size: 1.2em;
+    color: #007bff;
+    margin-bottom: 5px;
+  }
+  
+  .cookie-option p {
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  .cookie-option a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .cookie-option a:hover {
+    text-decoration: underline;
+  }
+  
+  .confirm-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #333;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Ocupa toda la parte inferior de la página */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .footer-links {
+    margin: 10px 0;
+  }
+  
+  .footer-links a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .app-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .app-links a {
+    display: inline-block;
+  }
+  
+  .app-store-logo {
+    width: 170px; /* Tamaño específico para App Store */
+    height: auto;
+  }
+  
+  .play-store-logo {
+    width: 152px; /* Tamaño específico para Google Play */
+    height: auto;
+  }
+  
+  .app-logo {
+    transition: transform 0.2s; /* Efecto de hover */
+  }
+  
+  .app-logo:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño en hover */
+  }
+  
+  .company-info {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .footer-logo {
+    width: 80px;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+
